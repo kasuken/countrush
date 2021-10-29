@@ -29,20 +29,13 @@ namespace CountRush.Controllers
         [HttpGet("badge")]
         public IActionResult GetBadge(string repository)
         {
+            var bitmap = new Bitmap(150, 20, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
-            Bitmap bitmap = new Bitmap(150, 20, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            var graphics = Graphics.FromImage(bitmap);
+            graphics.FillRectangle(new SolidBrush(Color.Red), new Rectangle(0, 0, 150, 20));
 
-            Graphics graphics = Graphics.FromImage(bitmap);
-
-            graphics.FillRectangle(new SolidBrush(Color.Red), new Rectangle(0, 0, 300, 50));
-
-            MemoryStream ms = new MemoryStream();
-            
-                bitmap.Save(ms, ImageFormat.Png);
-                HttpResponseMessage result = new HttpResponseMessage(HttpStatusCode.OK);
-                result.Content = new ByteArrayContent(ms.ToArray());
-                result.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
-
+            var ms = new MemoryStream();
+            bitmap.Save(ms, ImageFormat.Png);
             ms.Position = 0;
 
             var watermarkedStream = new MemoryStream();
@@ -60,9 +53,6 @@ namespace CountRush.Controllers
                     img.Save(watermarkedStream, ImageFormat.Png);
                 }
             }
-
-
-            //return Ok();
 
             watermarkedStream.Position = 0;
             return File(watermarkedStream, "image/png");
