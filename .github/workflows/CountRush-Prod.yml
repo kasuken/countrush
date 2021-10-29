@@ -1,4 +1,4 @@
-name: Build and deploy .NET Core app to Windows WebApp CountRush-Prod
+name: CountRush-Prod
 on:
   push:
     branches:
