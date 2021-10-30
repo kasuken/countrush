@@ -7,5 +7,6 @@ namespace CountRush.Services
 {
     public interface ICountRushRepository
     {
+        Task<int> RetrieveVisitors(string repositoryname);
     }
 }
