@@ -27,12 +27,18 @@ namespace CountRush.Controllers
         }
 
         [HttpGet("badge")]
-        public IActionResult GetBadge(string repository)
+        public async Task<IActionResult> GetBadge(string repository, string label, string color)
         {
-            var visitors = countRushRepository.RetrieveVisitors(repository);
+            var visitors = await countRushRepository.RetrieveVisitors(repository);
+
+            if (string.IsNullOrEmpty(label))
+                label = "visitors";
+
+            if (string.IsNullOrEmpty(color))
+                color = "BrightGreen";
 
             var bp = new BadgePainter();
-            string svg = bp.DrawSVG("visitors", visitors.ToString(), ColorScheme.BrightGreen, Style.Flat);
+            var svg = bp.DrawSVG(label, visitors.ToString(), DotBadge.ColorScheme.BrightGreen, Style.Flat);
 
             Response.Headers.Add("Pragma", "no-cache");
             Response.Headers.Add("Content-Type", "image/svg+xml");
