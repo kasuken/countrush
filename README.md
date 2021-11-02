@@ -1,4 +1,4 @@
-# countrush - A visitor counter for your GitHub Readme
+# Countrush - A visitor counter for your GitHub Readme
 
 ![](https://countrush-prod.azurewebsites.net/l/badge/?repository=kasuken.countrush)
 
