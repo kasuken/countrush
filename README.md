@@ -1,3 +1,3 @@
 # countrush
 
-![](https://0d5a-89-217-34-202.ngrok.io/l/badge/?repository=kasuken/countrush&1234)
+![](https://countrush-prod.azurewebsites.net/l/badge/?repository=kasuken/kasuken.countrush)
