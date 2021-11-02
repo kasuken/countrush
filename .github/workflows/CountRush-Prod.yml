@@ -20,11 +20,11 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
     - name: Restore
-      run: dotnet restore ./CountRush/CountRush.csproj
+      run: dotnet restore ./src/CountRush/CountRush.csproj
     - name: Build
-      run: dotnet build ./CountRush/CountRush.csproj --configuration ${{ env.CONFIGURATION }} --no-restore
+      run: dotnet build ./src/CountRush/CountRush.csproj --configuration ${{ env.CONFIGURATION }} --no-restore
     - name: Publish
-      run: dotnet publish ./CountRush/CountRush.csproj --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
+      run: dotnet publish ./src/CountRush/CountRush.csproj --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
     - name: Deploy to Azure WebApp
       uses: azure/webapps-deploy@v2
       with:
