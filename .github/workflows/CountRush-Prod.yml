@@ -2,7 +2,7 @@ name: CountRush-Prod
 on:
   push:
     branches:
-    - feature/version1
+    - main
 env:
   AZURE_WEBAPP_NAME: CountRush-Prod
   AZURE_WEBAPP_PACKAGE_PATH: CountRush/publish
