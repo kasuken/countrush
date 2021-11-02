@@ -52,6 +52,8 @@ namespace CountRush.Services
                         )
                 );
 
+                return visitors.Count;
+
             }
             catch (Exception ex)
             {
