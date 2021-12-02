@@ -4,7 +4,7 @@
 
 ## Usage
 
-Simply add `![](![](https://countrush-prod.azurewebsites.net/l/badge/?repository=YourUsername.RepoName)` inside your README.md file and that's all.
+Simply add `![](https://countrush-prod.azurewebsites.net/l/badge/?repository=YourUsername.RepoName)` inside your README.md file and that's all.
 
 ## Customisation
 
