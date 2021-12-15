@@ -12,7 +12,7 @@ There are a few customisations that you can apply.
 
 | Query param name | Possible values                      | Example value      | Description                                         |
 |------------------|--------------------------------------|--------------------|-----------------------------------------------------|
-| text             | text                                 | Strangers          | Overrides the default "visitors" text               |
+| label            | label                                | Strangers          | Overrides the default "visitors" text               |
 
 ## Disclaimer
 
